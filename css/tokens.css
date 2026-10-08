@@ -42,8 +42,8 @@
   --meat: var(--burgundy-700);
   --meat-bg: var(--burgundy-100);
   --success: #2F6B3A;
-  --warn-bg: #FCE9C4;
-  --warn-ink: #5C3F06;
+  --warn-bg: #E3F3FC;
+  --warn-ink: #0B3C5A;
   --danger: #A3202E;
   --focus: #1F5FBF;
   --overlay: rgba(36, 22, 24, .55);

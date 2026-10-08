@@ -22,7 +22,7 @@
 .btn--ghost { --btn-bg: transparent; --btn-ink: var(--ink); }
 .btn--ghost:hover { --btn-bg: var(--surface-2); box-shadow: none; }
 .btn--gold { --btn-bg: var(--brass-400); --btn-ink: #2B1A06; }
-.btn--gold:hover { --btn-bg: #E6B455; }
+.btn--gold:hover { --btn-bg: #C4E8FA; }
 .btn--whatsapp { --btn-bg: #1E7B46; --btn-ink: #fff; }
 .btn--whatsapp:hover { --btn-bg: #176338; }
 .btn--sm { padding: .45rem .9rem; font-size: var(--fs-xs); }
@@ -38,7 +38,7 @@
 .announce__text { margin: 0; font-weight: 500; }
 .announce strong { color: var(--brass-400); }
 .announce a { color: inherit; font-weight: 700; }
-.announce--closed { background: #5C3F06; }
+.announce--closed { background: #8A120D; }
 
 /* ---------- header / nav ---------- */
 .site-header { position: sticky; top: 0; z-index: var(--z-header); background: color-mix(in srgb, var(--bg) 94%, transparent); backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid var(--line); }
