@@ -88,6 +88,31 @@
     $$("[data-spin]").forEach(function (el) { gsap.to(el, { rotation: 360, duration: 24, ease: "none", repeat: -1 }); });
   }
 
+
+  /* ---------- pinned scroll scene: scrubbed timeline, one chapter per scroll step ---------- */
+  function setupScene() {
+    var scene = doc.querySelector(".mx-scene");
+    if (!scene || reduce || !gsap || !ST) return;
+    var chapters = $$(".mx-ch", scene), shots = $$(".mx-shot", scene), bar = scene.querySelector(".mx-scene__progress span"), disc = scene.querySelector(".mx-scene__disc");
+    if (chapters.length < 2 || chapters.length !== shots.length) return;
+    gsap.matchMedia().add("(min-width: 0px)", function () {
+      scene.classList.add("is-pinned");
+      gsap.set(chapters.slice(1), { autoAlpha: 0, y: 50 });
+      gsap.set(shots.slice(1), { autoAlpha: 0, scale: 0.55, rotation: 35 });
+      var tl = gsap.timeline({ defaults: { ease: "power2.inOut" }, scrollTrigger: { trigger: scene, start: "top top", end: "+=" + chapters.length * 80 + "%", pin: true, scrub: 0.6, anticipatePin: 1 } });
+      tl.to(bar, { scaleX: 1, ease: "none", duration: chapters.length }, 0);
+      tl.to(disc, { rotation: 90 * (chapters.length - 1), ease: "none", duration: chapters.length }, 0);
+      for (var i = 1; i < chapters.length; i++) {
+        var t = i - 0.5;
+        tl.to(chapters[i - 1], { autoAlpha: 0, y: -50, duration: 0.4 }, t)
+          .to(shots[i - 1], { autoAlpha: 0, scale: 1.4, rotation: -35, duration: 0.4 }, t)
+          .to(chapters[i], { autoAlpha: 1, y: 0, duration: 0.4 }, t + 0.25)
+          .to(shots[i], { autoAlpha: 1, scale: 1, rotation: 0, duration: 0.5, ease: "back.out(1.4)" }, t + 0.2);
+      }
+      return function () { scene.classList.remove("is-pinned"); gsap.set([chapters, shots], { clearProps: "all" }); };
+    });
+  }
+
   /* ---------- marquee (LogoLoop-style) that speeds up with scroll velocity ---------- */
   function setupMarquee() {
     $$("[data-marquee]").forEach(function (track) {
@@ -124,7 +149,7 @@
     safe(setupCounts);
     safe(setupMarquee);
     safe(setupPointer);
-    var go = function () { safe(setupSplit); safe(setupReveals); if (ST) ST.refresh(); };
+    var go = function () { safe(setupSplit); safe(setupReveals); safe(setupScene); if (ST) ST.refresh(); };
     if (gsap && ST) gsap.registerPlugin(ST);
     if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(go); else go();
   }

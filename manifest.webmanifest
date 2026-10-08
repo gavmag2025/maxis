@@ -5,7 +5,7 @@
   "start_url": "index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#F6EFE0",
+  "background_color": "#FFFFFF",
   "theme_color": "#14110F",
   "lang": "en-ZA",
   "icons": [{ "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]

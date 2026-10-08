@@ -1,4 +1,4 @@
-/* Maxi's Discount Kosher Butchery - design tokens. Butcher-paper cream, signal red, price-tag yellow, ink black. Light only (bold flyer look). */
+/* Maxi's Discount Kosher Butchery - design tokens. White, signal red, light blue, ink black (matches the shop logo). Light only (bold flyer look). */
 :root {
   /* brand */
   --burgundy-900: #4A0B08;
@@ -7,11 +7,11 @@
   --burgundy-600: #A8140E;
   --burgundy-500: #E23A2E;
   --burgundy-100: #FFE0DB;
-  --brass-700: #6B4E00;      /* brass as TEXT on cream (AA) */
-  --brass-600: #8F6A00;
-  --brass-500: #F2B705;      /* brass as DECORATION */
-  --brass-400: #FFD21F;
-  --brass-200: #FFEFA8;
+  --brass-700: #0B5A86;      /* brass as TEXT on cream (AA) */
+  --brass-600: #1479AE;
+  --brass-500: #6CC4EE;      /* brass as DECORATION */
+  --brass-400: #9ED8F5;
+  --brass-200: #DDF2FC;
   --herb-700: #14573A;
   --herb-600: #1B6B43;
   --herb-100: #E3EFDC;
@@ -20,14 +20,14 @@
   --char-500: #6B625B;
 
   /* semantic - light */
-  --bg: #F6EFE0;
-  --bg-alt: #FFE98A;
+  --bg: #FFFFFF;
+  --bg-alt: #D4EEFB;
   --surface: #FFFFFF;
-  --surface-2: #F1E7CF;
+  --surface-2: #EAF5FB;
   --ink: var(--char-900);
   --ink-2: #4D443D;          /* 7.0:1 on --bg */
   --ink-inverse: #FFF8EA;
-  --line: #D8CBAE;
+  --line: #CBD9E2;
   --line-strong: #14110F;
   --primary: var(--burgundy-700);
   --primary-hover: var(--burgundy-600);
@@ -35,28 +35,28 @@
   --primary-text: #B3150F; /* primary used as TEXT colour */
   --primary-soft: var(--burgundy-100);
   --accent: var(--brass-500);
-  --accent-ink: #6B4E00;
+  --accent-ink: #0B5A86;
   --accent-soft: var(--brass-200);
   --pareve: var(--herb-600);
   --pareve-bg: var(--herb-100);
   --meat: var(--burgundy-700);
   --meat-bg: var(--burgundy-100);
   --success: #2F6B3A;
-  --warn-bg: #FBE9BE;
+  --warn-bg: #FCE9C4;
   --warn-ink: #5C3F06;
   --danger: #A3202E;
   --focus: #1F5FBF;
   --overlay: rgba(36, 22, 24, .55);
-  --announce-bg: #FFD21F;
+  --announce-bg: #9ED8F5;
   --announce-ink: #14110F;
   --footer-bg: #14110F;
-  --footer-ink: #F6EFE0;
-  --footer-ink-2: #BDB3A3;
-  --skeleton-a: #E9DDC2;
-  --skeleton-b: #F6EFE0;
+  --footer-ink: #F2F8FC;
+  --footer-ink-2: #AEBFCA;
+  --skeleton-a: #E1ECF3;
+  --skeleton-b: #F2F8FC;
 
   /* geometric border motif (fine lattice, neutral) */
-  --motif: repeating-linear-gradient(135deg,#14110F 0 14px,#FFD21F 14px 28px);
+  --motif: repeating-linear-gradient(135deg,#14110F 0 14px,#9ED8F5 14px 28px);
   --pattern: none;
 
   /* type */

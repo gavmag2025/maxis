@@ -1,4 +1,4 @@
-/* maxis.css - Maxi's look: bold discount-flyer. Hard black edges, offset shadows, condensed caps, price-tag yellow.
+/* maxis.css - Maxi's look: bold discount-flyer. Hard black edges, offset shadows, condensed caps, light blue.
    Loaded after the shared component CSS, so it overrides shape and type without touching layout. */
 
 /* ---- Lenis ---- */
@@ -27,20 +27,20 @@ a { text-underline-offset: .18em; }
 .brand { color: #fff; }
 .brand__mark { border-radius: 4px; border: 2px solid var(--brass-400); background: var(--brass-400); }
 .brand__name { font-family: var(--font-display); font-weight: 400; font-size: 1.9rem; letter-spacing: .03em; text-transform: uppercase; color: var(--brass-400); font-variation-settings: normal; }
-.brand__sub { color: #E8DFCF; }
-.bsd { color: #BDB3A3; }
+.brand__sub { color: #DCEBF4; }
+.bsd { color: #AEBFCA; }
 .nav__link { color: #fff; border-radius: 0; text-transform: uppercase; letter-spacing: .06em; font-weight: 700; font-size: .85rem; }
 .nav__link:hover { background: transparent; color: var(--brass-400); }
 .nav__link[aria-current="page"] { background: var(--brass-400); color: var(--ink); }
 .icon-btn { color: #fff; }
-.icon-btn:hover { background: #2a2420; }
+.icon-btn:hover { background: #26323A; }
 .nav-toggle__bars, .nav-toggle__bars::before, .nav-toggle__bars::after { background: #fff; }
 .cart-btn { background: var(--brass-400); color: var(--ink); border: 2px solid var(--brass-400); border-radius: 0; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; box-shadow: 3px 3px 0 var(--primary); }
 .cart-btn:hover { background: #fff; }
 .cart-btn__count { background: var(--ink); color: #fff; border-radius: 0; }
 .motif-bar { height: 10px; }
 .mobile-menu { background: var(--ink); color: #fff; }
-.mobile-menu__link { color: #fff; font-family: var(--font-display); text-transform: uppercase; font-size: 1.6rem; letter-spacing: .03em; border-bottom: 1px solid #3a332e; }
+.mobile-menu__link { color: #fff; font-family: var(--font-display); text-transform: uppercase; font-size: 1.6rem; letter-spacing: .03em; border-bottom: 1px solid #34424B; }
 .mobile-menu__link[aria-current="page"] { color: var(--brass-400); background: transparent; }
 
 /* ---- buttons, inputs, chips ---- */
@@ -53,7 +53,7 @@ a { text-underline-offset: .18em; }
 .btn--ghost:hover, .btn--text:hover { box-shadow: none; transform: none; }
 .btn--text { --btn-ink: var(--primary-text); text-decoration-thickness: 2px; }
 .btn--gold { --btn-bg: var(--brass-400); --btn-ink: var(--ink); }
-.btn--gold:hover { --btn-bg: #FFE46B; }
+.btn--gold:hover { --btn-bg: #C4E8FA; }
 .btn--whatsapp { --btn-bg: #12703D; }
 .chip, .select, .input, .qty, .field input, .field select, .field textarea, .search .input { border-radius: 0; border-width: 2px; border-color: var(--ink); }
 .chip { font-weight: 700; text-transform: uppercase; letter-spacing: .04em; font-size: .8rem; background: #fff; }
@@ -139,7 +139,7 @@ a { text-underline-offset: .18em; }
 .mx-stats__list { list-style: none; margin: 0 auto; padding: var(--s-5) var(--gutter); max-width: var(--container); display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s-5) var(--s-4); }
 .mx-stats__list li { display: grid; gap: .1rem; }
 .mx-stats__list strong { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.4rem, 1.6rem + 3vw, 4rem); line-height: 1; color: var(--brass-400); }
-.mx-stats__list span:not([data-countup]) { font-size: var(--fs-sm); text-transform: uppercase; letter-spacing: .08em; font-weight: 600; color: #E8DFCF; }
+.mx-stats__list span:not([data-countup]) { font-size: var(--fs-sm); text-transform: uppercase; letter-spacing: .08em; font-weight: 600; color: #DCEBF4; }
 @media (min-width: 52em) { .mx-stats__list { grid-template-columns: repeat(4, 1fr); } }
 
 /* ---- steps ---- */
@@ -158,4 +158,36 @@ a { text-underline-offset: .18em; }
 }
 @media (prefers-reduced-motion: reduce) {
   .product-card:hover, .cat-tile:hover { transform: none; }
+}
+
+/* ---- pinned scroll scene ---- (default = plain stacked list; .is-pinned is added by fx.js when motion is allowed) */
+.mx-scene { background: var(--ink); color: #fff; border-block: 3px solid var(--ink); overflow: hidden; }
+.mx-scene__inner { display: grid; gap: var(--s-6); padding-block: var(--s-7); align-items: center; }
+.mx-scene .eyebrow { background: var(--brass-400); }
+.mx-scene h2 { color: #fff; }
+.mx-scene__chapters { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-4); }
+.mx-ch { position: relative; padding-left: 4.2rem; }
+.mx-ch h3 { color: var(--brass-400); margin-bottom: .25rem; }
+.mx-ch p { margin: 0; color: #E6EEF3; max-width: 30rem; }
+.mx-ch__n { position: absolute; left: 0; top: 0; width: 3.2rem; height: 3.2rem; display: grid; place-items: center; background: var(--primary); color: #fff; font-family: var(--font-display); font-size: 1.9rem; transform: rotate(-4deg); border: 2px solid #fff; }
+.mx-scene__progress { display: none; }
+.mx-scene__plate { position: relative; justify-self: center; width: min(100%, 26rem); aspect-ratio: 1; }
+.mx-scene__disc { position: absolute; inset: 4%; border-radius: 50%; background: var(--brass-400); border: 4px solid #fff; box-shadow: 10px 10px 0 var(--primary); }
+.mx-shot { position: absolute; inset: 12%; width: 76%; height: 76%; object-fit: cover; border-radius: 50%; border: 4px solid var(--ink); }
+.mx-shot:not(:first-of-type) { display: none; }
+@media (min-width: 52em) { .mx-scene__inner { grid-template-columns: 1.1fr .9fr; } }
+
+.mx-scene.is-pinned { height: 100vh; height: 100svh; }
+.mx-scene.is-pinned .mx-scene__inner { height: 100%; padding-block: calc(var(--header-h) + 1rem) 1.5rem; align-content: center; }
+.mx-scene.is-pinned .mx-scene__chapters { display: block; position: relative; min-height: 11rem; margin-block: var(--s-4); }
+.mx-scene.is-pinned .mx-ch { position: absolute; inset: 0 0 auto 0; }
+.mx-scene.is-pinned .mx-ch__n { position: absolute; }
+.mx-scene.is-pinned .mx-shot { display: block; }
+.mx-scene.is-pinned .mx-scene__progress { display: block; height: 8px; background: #34424B; border: 2px solid #fff; max-width: 26rem; }
+.mx-scene.is-pinned .mx-scene__progress span { display: block; height: 100%; background: var(--primary); transform: scaleX(0); transform-origin: left; }
+.mx-scene.is-pinned h2 { font-size: clamp(1.8rem, 1.2rem + 2.4vw, 3.2rem); }
+@media (max-width: 51.99em) {
+  .mx-scene.is-pinned .mx-scene__inner { gap: var(--s-4); }
+  .mx-scene.is-pinned .mx-scene__plate { width: min(62vw, 15rem); }
+  .mx-scene.is-pinned .mx-scene__chapters { min-height: 9.5rem; }
 }
